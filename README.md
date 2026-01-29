@@ -1,4 +1,4 @@
-# Maze Solver with Backtracking
+# Maze Game with Backtracking
 
 Bu proje, **Veri Yapıları ve Algoritmalar** dersi kapsamında geliştirilen  
 **Labirent (Maze) Oyunu: Backtracking Uygulaması**dır.
