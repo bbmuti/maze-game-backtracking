@@ -8,7 +8,7 @@ en uygun yolu **Backtracking (Geri İzleme)** algoritması kullanarak bulmaktır
 
 ---
 
-## 📌 Proje Özeti
+## Proje Özeti
 
 - Labirent, bir metin dosyasından (`Harita.txt`) okunur.
 - Engel (`#`) ve geçilebilir yollar (` `) ile temsil edilir.
@@ -18,7 +18,7 @@ en uygun yolu **Backtracking (Geri İzleme)** algoritması kullanarak bulmaktır
 
 ---
 
-## 🧠 Kullanılan Algoritma
+## Kullanılan Algoritma
 
 **Backtracking**
 
@@ -31,7 +31,7 @@ Algoritma şu şekilde çalışır:
 
 ---
 
-## 🧱 Kullanılan Veri Yapıları
+## Kullanılan Veri Yapıları
 
 - **Stack**
   - Gidilen yolları ve geri dönüşleri takip etmek için kullanılır.
@@ -42,7 +42,7 @@ Algoritma şu şekilde çalışır:
 
 ---
 
-## 📂 Proje Dizin Yapısı
+## Proje Dizin Yapısı
 
 ```text
 .
@@ -62,7 +62,7 @@ Algoritma şu şekilde çalışır:
 └── Rapor
 ```
 
-## ▶️ Programın Çalışması
+## Programın Çalışması
 
 Derleme ve çalıştırma işlemi **MinGW** kullanılarak yapılmaktadır:
 
