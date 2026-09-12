@@ -1,0 +1,20 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - run: make
+      - name: Run sample maze
+        run: timeout 30s ./bin/maze-game > /tmp/maze-output.txt
+      - run: grep -q "ÇIKIŞA ULAŞILDI" /tmp/maze-output.txt
