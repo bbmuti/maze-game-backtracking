@@ -1,79 +1,54 @@
-# Maze Game with Backtracking
+# Labirent Oyunu — Backtracking
 
-Bu proje, **Veri Yapıları ve Algoritmalar** dersi kapsamında geliştirilen  
-**Labirent (Maze) Oyunu: Backtracking Uygulaması**dır.
+20 × 50 karakterlik bir metin haritasında çıkış yolunu, özel bir yığın (stack) veri yapısı ve geri izleme (backtracking) yaklaşımıyla bulan C++ konsol uygulaması.
 
-Amaç, MxN boyutlarında bir labirent içerisinde başlangıç noktasından çıkış noktasına
-en uygun yolu **Backtracking (Geri İzleme)** algoritması kullanarak bulmaktır.
+## Nasıl çalışır?
 
----
+- `#` karakterleri duvarları, boşluklar geçilebilir alanları temsil eder.
+- Program girişten başlayarak uygun komşu hücreleri dener.
+- Çıkmaz sokağa ulaştığında yığındaki önceki konuma döner ve farklı bir yönü araştırır.
+- Arama süreci terminalde adım adım gösterilir.
 
-## Proje Özeti
+## Derleme ve çalıştırma
 
-- Labirent, bir metin dosyasından (`Harita.txt`) okunur.
-- Engel (`#`) ve geçilebilir yollar (` `) ile temsil edilir.
-- Algoritma, çıkmaz sokaklara girdiğinde geri dönerek alternatif yolları dener.
-- Çıkış bulunduğunda yol `-` karakteri ile işaretlenir.
-- Çözüm süreci terminal üzerinde adım adım görselleştirilir.
+Gereksinimler: C++17 destekli bir derleyici ve `make`.
 
----
+```bash
+make
+make run
+```
 
-## Kullanılan Algoritma
+Derleme çıktılarını kaldırmak için:
 
-**Backtracking**
+```bash
+make clean
+```
 
-Algoritma şu şekilde çalışır:
-1. Başlangıç noktasından hareket edilir.
-2. Uygun yönler sırayla denenir (Aşağı, Sağ, Yukarı, Sol).
-3. Engel veya çıkmaz varsa bir önceki konuma geri dönülür.
-4. Daha önce denenmiş yollar tekrar kullanılmaz.
-5. Çıkış noktasına ulaşıldığında algoritma sonlanır.
-
----
-
-## Kullanılan Veri Yapıları
-
-- **Stack**
-  - Gidilen yolları ve geri dönüşleri takip etmek için kullanılır.
-- **Sınıflar**
-  - `Labirent` : Haritayı yükler ve çözüm sürecini yönetir.
-  - `Konum` : Anlık x-y koordinatlarını ve yön bilgisini tutar.
-  - `Stack` : Backtracking işlemleri için kullanılır.
-
----
-
-## Proje Dizin Yapısı
+## Proje yapısı
 
 ```text
 .
-├── bin
-├── include
+├── Harita.txt
+├── include/
 │   ├── Konum.hpp
 │   ├── Labirent.hpp
 │   └── Stack.hpp
-├── lib
-├── src
+├── src/
 │   ├── Konum.cpp
 │   ├── Labirent.cpp
-│   └── test.cpp
-├── Harita
-│   └── Harita.txt
-├── makefile
-└── Rapor
+│   └── Test.cpp
+└── makefile
 ```
 
-## Programın Çalışması
+`bin/` ve `lib/` klasörleri derleme sırasında oluşturulur; üretilen çalıştırılabilir dosyalar ve nesne dosyaları repoya eklenmez.
 
-Derleme ve çalıştırma işlemi **MinGW** kullanılarak yapılmaktadır:
+## Teknik notlar
 
-```bash
-mingw32-make
-```
+- Harita boyutu ve başlangıç/bitiş koordinatları çalıştırma sırasında doğrulanır.
+- Harita dışındaki koordinatlar engel kabul edilir.
+- Dosya ve bellek yönetimi RAII ilkelerine uygun biçimde yapılır.
+- Platforma özel Windows başlıkları veya kabuk komutları kullanılmaz.
 
-Program çalıştığında:
+## Lisans
 
-- Labirent terminal ekranında çizilir.
-- Algoritmanın hareketleri adım adım ve canlı olarak gösterilir.
-- Çıkış bulunduğunda ekrana "ÇIKIŞA GELDİ" mesajı yazdırılır.
-
-
+Bu depo eğitim ve portföy amacıyla paylaşılmıştır.
